@@ -1,6 +1,6 @@
 const shell = require('shelljs');
 const assert = require('assert');
-const escape = require('schellescape');
+const escape = require('shell-escape');
 
 const pdfjamOptions = ['nup', 'scale', 'trim', 'suffix', 'outfile', 'papersize'];
 
@@ -30,7 +30,7 @@ async function pdfjam(_input, _options) {
 
     const options = Object.assign({}, _options);
 
-    const args = [];
+    let args = [];
     if (options.orientation === "landscape") {
         args.push("--landscape");
     }
@@ -56,8 +56,9 @@ async function pdfjam(_input, _options) {
     shell.exec(`pdfjam ${escape(args)}`);
 }
 
-modules.exports = (function() {
-    this.nup = pdfnup;
+module.exports = (function() {
+    const ret = pdfjam.bind(null);
+    ret.nup = pdfnup;
 
-    return pdfjam;
+    return ret;
 })();
