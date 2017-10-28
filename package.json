@@ -1,0 +1,32 @@
+{
+  "name": "pdfjam",
+  "version": "0.0.1",
+  "description": "Pdf manipulation using pdfjam",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coyotte508/node-pdfjam.git"
+  },
+  "keywords": [
+    "pdfjam",
+    "pdfnup",
+    "pdf manipulation"
+  ],
+  "author": "coyotte508",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/coyotte508/node-pdfjam/issues"
+  },
+  "homepage": "https://github.com/coyotte508/node-pdfjam#readme",
+  "dependencies": {
+    "assert": "^1.4.1",
+    "escape-quotes": "^1.0.2",
+    "shelljs": "^0.7.8"
+  },
+  "engines" : { 
+    "node" : ">=8.0.0"
+  }
+}
