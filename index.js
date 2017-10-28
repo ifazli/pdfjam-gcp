@@ -39,8 +39,6 @@ async function pdfjam(_input, _options) {
         args.push("--batch");
     }
 
-    args.push('--quiet');
-
     /* So they don't get caught in the assert below */
     delete options.orientation;
     delete options.batch;
@@ -55,7 +53,15 @@ async function pdfjam(_input, _options) {
 
     assert(shell.which('pdfjam'), "No local pdfjam installation detected. Install texlive-extra-utils on your system.");
 
-    shell.exec(`pdfjam ${escape(args)}`);
+    const result = shell.exec(`pdfjam ${escape(args)}`, {
+        silent: true
+    });
+
+    if (result.code !== 0) {
+        throw new Error("Pdfjam failed: exit code " + result.code);
+        // Todo, proper error message
+        // throw new Error("Pdfjam failed: " + result.stderr);
+    }
 }
 
 module.exports = (function() {

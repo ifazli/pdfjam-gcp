@@ -1,6 +1,6 @@
 {
   "name": "pdfjam",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "Pdf manipulation using pdfjam",
   "main": "index.js",
   "scripts": {

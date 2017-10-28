@@ -109,7 +109,7 @@ Helper for page layout. Calls `pdfjam` with the `nup` option, as well as the pro
 
 ## Contributing
 
-There are many more options that can easily be added to the module, such as paper type (`paper: 'a4paper`) or page color.
+There are many more options that can easily be added to the module, such as paper type (`paper: 'a4paper'`) or page color.
 
 I very welcome contributions or even taking over of the project. This project was made in order to fill one
 of my particular needs, the use of `pdfnup`, so I welcome any contribution adding more of pdjam's features.
