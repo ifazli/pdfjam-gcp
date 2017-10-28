@@ -99,7 +99,7 @@ Here are the valid values for `options`:
 - **orientation** *{'portrait'|'landscape'}* : Orientation of the output.
 - **batch** *{boolean = false}*: If set to true, will process each input file individually and produce an output file for each.
 - **scale** *{number = 1.0}*: Can resize the pages of the input in the output.
-- **papersize** *{string = "{21cm,29.7cm}"}*: Size of the pages in the output. Unit can be cm or px.
+- **papersize** *{string = "{21cm,29.7cm}"}*: Size of the pages in the output. Unit can be cm or px or in.
 - **trim** *{string = "0cm 0cm 0cm 0cm"}*: Remove margins from the input pages. Can also add margins by using negative numbers.
 - **nup** *{string = "1x1"}*: Page layout in the output pdf.
 
@@ -107,8 +107,9 @@ Here are the valid values for `options`:
 
 Helper for page layout. Calls `pdfjam` with the `nup` option, as well as the provided `options`, and if no suffix or outfile is provided, will set the suffix to `"nup"`.
 
-
 ## Contributing
+
+There are many more options that can easily be added to the module, such as paper type (`paper: 'a4paper`) or page color.
 
 I very welcome contributions or even taking over of the project. This project was made in order to fill one
 of my particular needs, the use of `pdfnup`, so I welcome any contribution adding more of pdjam's features.

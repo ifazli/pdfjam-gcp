@@ -39,6 +39,8 @@ async function pdfjam(_input, _options) {
         args.push("--batch");
     }
 
+    args.push('--quiet');
+
     /* So they don't get caught in the assert below */
     delete options.orientation;
     delete options.batch;
