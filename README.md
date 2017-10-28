@@ -64,13 +64,21 @@ Pdfjam is needed. On debian systems, you can get it like that:
 sudo apt install texlive-extra-utils
 ```
 
-Note that this installs 600MB of programs if you don't already have a LaTeX infrastructure.
+Note that this installs 600MB of software if you don't already have a LaTeX infrastructure.
 
-Node version 6+ is expected. If you want to update your node version, you can do:
+Node version 8+ is expected. If you want to update your node version, you can do:
 
 ```bash
 sudo npm install -g n
 sudo n stable
+```
+
+## Installation
+
+Run this in your project directory:
+
+```bash
+npm i pdfjam  #add --save if your npm is < 5.0
 ```
 
 ## Documentation
@@ -78,7 +86,7 @@ sudo n stable
 All functions return promises. The output directory of pdfjam is the working directory of your program (`process.cwd()`),
 but you can specify an absolute path in the `outfile` option.
 
-**pdfjam**(input: *string | string[]*, options: *object*)
+### **pdfjam**(input: *string | string[]*, options: *object*)
 
 Invokes `pdfjam` with the input given. If an array of strings is given as input, then the input files will be merged
 in the output, unless the `batch` options is provided, in which case there will be as many output files as input files.
@@ -95,7 +103,7 @@ Here are the valid values for `options`:
 - **trim** *{string = "0cm 0cm 0cm 0cm"}*: Remove margins from the input pages. Can also add margins by using negative numbers.
 - **nup** *{string = "1x1"}*: Page layout in the output pdf.
 
-**pdfjam.nup** (input: *string | string[]*, rows: *number*, cols: *number*, options: *object*)
+### **pdfjam.nup** (input: *string | string[]*, rows: *number*, cols: *number*, options: *object*)
 
 Helper for page layout. Calls `pdfjam` with the `nup` option, as well as the provided `options`, and if no suffix or outfile is provided, will set the suffix to `"nup"`.
 

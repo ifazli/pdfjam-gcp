@@ -1,6 +1,6 @@
 const shell = require('shelljs');
 const assert = require('assert');
-const escape = require('escape-quotes');
+const escape = require('schellescape');
 
 const pdfjamOptions = ['nup', 'scale', 'trim', 'suffix', 'outfile', 'papersize'];
 
@@ -24,10 +24,8 @@ function pdfnup(input, _rows, _cols, _options) {
 async function pdfjam(_input, _options) {
     /* Properly quote inputs */
     let input = _input;
-    if (Array.isArray(_input)) {
-        input = _input.map(file => `'${escape(file)}'`).join(" ");
-    } else {
-        input = `'${escape(input)}'`;
+    if (!Array.isArray(_input)) {
+        input = [_input];
     }
 
     const options = Object.assign({}, _options);
@@ -48,12 +46,14 @@ async function pdfjam(_input, _options) {
     for (const opt of Object.keys(options)) {
         assert(pdfjamOptions.indexOf(opt) !== -1, `Unknown pdfjam option: ${opt}`);
 
-        args.push(`--${opt} '${escape(options[opt])}'`);
+        args = args.concat([`--${opt}`, options[opt]]);
     }
+
+    args = args.concat(input);
 
     assert(shell.which('pdfjam'), "No local pdfjam installation detected. Install texlive-extra-utils on your system.");
 
-    shell.exec(`pdfjam ${args.join(' ')} ${input}`);
+    shell.exec(`pdfjam ${escape(args)}`);
 }
 
 modules.exports = (function() {
