@@ -1,14 +1,14 @@
 {
-  "name": "pdfjam",
+  "name": "pdfjam-gcp",
   "version": "0.1.0",
-  "description": "Pdf manipulation using pdfjam",
+  "description": "Pdf manipulation using pdfjam with pdfjam shell scripts in built",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/coyotte508/node-pdfjam.git"
+    "url": "git+https://github.com/ifazli/pdfjam-gcp.git"
   },
   "keywords": [
     "pdf",
@@ -20,7 +20,7 @@
   "author": "coyotte508",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/coyotte508/node-pdfjam/issues"
+    "url": "https://github.com/ifazli/node-pdfjam/issues"
   },
   "homepage": "https://github.com/coyotte508/node-pdfjam#readme",
   "dependencies": {
