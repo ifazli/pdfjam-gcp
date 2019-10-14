@@ -4,6 +4,14 @@ const escape = require('shell-escape');
 
 const pdfjamOptions = ['nup', 'scale', 'trim', 'suffix', 'outfile', 'papersize'];
 
+const { PATH, CODE_LOCATION } = process.env
+
+const BIN = 'node_modules/pdfjam-gcp/bin'
+
+process.env.PATH = `${PATH}:${CODE_LOCATION}/${BIN}`
+process.env.LD_LIBRARY_PATH = `${CODE_LOCATION}/${BIN}`
+process.env.PKG_CONFIG_PATH = `${CODE_LOCATION}/${BIN}`
+
 function pdfnup(input, _rows, _cols, _options) {
     assert(arguments.length >= 3, "Insufficient arguments for pdfjam.nup, expected at least 3, was given " + arguments.length);
 
