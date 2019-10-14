@@ -2,7 +2,7 @@
   "name": "pdfjam-gcp",
   "version": "0.1.0",
   "description": "Pdf manipulation using pdfjam with pdfjam shell scripts in built",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -26,9 +26,13 @@
   "dependencies": {
     "assert": "^1.4.1",
     "shell-escape": "^0.2.0",
-    "shelljs": "^0.7.8"
+    "shelljs": "^0.7.8",
+    "typescript": "^3.6.4"
   },
   "engines": {
     "node": ">=8.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^12.7.12"
   }
 }
